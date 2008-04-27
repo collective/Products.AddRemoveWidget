@@ -1,0 +1,1 @@
+See ./Products/AddRemoveWidget/README.txt

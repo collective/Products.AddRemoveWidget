@@ -1,0 +1,107 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="AddRemoveWidget">
+  <head><title></title></head>
+  <body>
+
+    <!-- Combo Box Widget -->
+
+    <!-- View - simply display item -->
+   <metal:view_macro define-macro="view"
+                     tal:define="vocab python:field.Vocabulary(here);
+                                 value python:accessor();
+                                 display python:here.displayValue(vocab, value);"
+                     tal:replace="structure display" />
+
+    <!-- Edit - a select box + an optional input box
+         
+         To reuse the widget outside archetypes, define:
+         
+            fieldName       - Name of the field to submit
+            vocabulary      - A DisplayList of permitted values (left box)
+            
+         optionally define:
+            
+            value           - A list of currently selected values (right box, default [])
+            width           - The width of the add boxes (default 10em)
+            size            - The height of the add boxes (default 7)
+            width_absolute  - Whether the width is absolute or min-width (default false)
+            
+         and then include the macro combo_box.
+      -->
+    <metal:define define-macro="edit">
+      <metal:use use-macro="field_macro | here/widgets/field/macros/edit">
+        <metal:widgetBody fill-slot="widget_body"
+                tal:define="value          accessor;
+                            vocabulary     python:field.Vocabulary(here);
+                            
+                            width          widget/width;
+                            width_absolute widget/width_absolute;
+                            size           widget/size;
+                            ">
+            <metal:widget define-macro="combo_box"
+                tal:define="value          value          | python:[];
+                            width          width          | string:10em;
+                            size           size           | string:7;
+                            width_absolute width_absolute | python:False; 
+                            
+                            selected       python:request.get(fieldName, value);
+                            entered        python:request.get('%s_other' % fieldName, '');
+                            widthSpec      python:test(width_absolute, 'width', 'min-width')">
+            
+            
+            <table cellpadding="2" cellspacing="2">
+            <tr>
+            <!-- Selection box --> 
+            <td valign="top" style="" colspan="2"
+                    tal:attributes="style string:${widthSpec}:${width}">
+
+                <select id="items"
+                        name=""
+                        size=""
+                        onDblClick=""
+                        tabindex=""
+                        style=""
+                        tal:attributes="id          fieldName;
+                                        name        fieldName;
+                                        style       string:${widthSpec}:${width};
+                                        tabindex    tabindex/next;
+                                        size        size;">
+                  <tal:block repeat="item vocabulary/keys">
+                    <option 
+                        value="#"
+                        tal:content="python:vocabulary.getValue(item)" 
+                        tal:attributes="value item;
+                                        selected python:test(item == selected, 'selected', None)">Item</option>
+                  </tal:block>
+                </select>
+
+            </td>
+            </tr>
+            <tr>
+            <td class="formHelp" i18n:translate="label_other">Other:</td>
+            <td valign="top">
+                <input type="text" style="width: 100%"
+                           tal:attributes="id string:${fieldName}_other;
+                                           name string:${fieldName}_other" />
+            </td>
+            </tr>
+            
+            </table>
+
+          </metal:widget>
+        </metal:widgetBody>
+      </metal:use>
+    </metal:define>
+
+    <div metal:define-macro="search">
+      <div metal:use-macro="here/widget_combobox/macros/edit">
+      </div>
+    </div>
+
+  </body>
+
+</html>
+
