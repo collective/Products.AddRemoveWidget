@@ -45,6 +45,10 @@
                             width_absolute widget/width_absolute;
                             size           widget/size;
                             
+                            isKWfield      python:widget.is_keyword_field(field);
+                            indexKWs       python:isKWfield and widget.vocabify(context.collectKeywords(fieldName, field.accessor )) or [];
+                            vocabulary     python:test(isKWfield,widget.combine(indexKWs,vocabulary,vocabulary),vocabulary);
+                            
                             roleBasedAdd   widget/role_based_add;
                             site_props     here/portal_properties/site_properties;
                             addRoleProp    widget/add_role_property;

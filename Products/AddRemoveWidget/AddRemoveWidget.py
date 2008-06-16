@@ -4,6 +4,9 @@
 
 from Products.Archetypes.Widget import TypesWidget
 from Products.Archetypes.Registry import registerWidget
+from Products.Archetypes.utils import DisplayList
+
+from Products.CMFCore.utils import getToolByName
 
 class AddRemoveWidget(TypesWidget):
     """Widget which presents two boxes, one with possible values, and one
@@ -56,6 +59,38 @@ class AddRemoveWidget(TypesWidget):
         if value == '' or value == [''] and emptyReturnsMarker:
             return empty_marker
         return value, {}
+
+    def is_keyword_field(self, field, source = 'portal_catalog'):
+        """Returns whether or not a given field has a corresponding KeywordIndex
+        in the specified catalog (defaults to 'portal_catalog').
+        """
+        catalog = getToolByName(self,source)
+        idxs = catalog.index_objects()
+        filtered = [idx for idx in idxs if idx.id == field.accessor and
+                    idx.meta_type == 'KeywordIndex' ]
+        return filtered != []
+    
+    def vocabify(self,list):
+        """Takes in a list (of keywords) and returns a display list that
+        is expected by the Vocabulary machinery.
+        """
+        dl = DisplayList()
+        for i in list:
+            dl.add(i,i)
+        return dl
+    
+    def combine(self,one,two,default):
+        """Util func to add two Display Lists together for the template because
+        not all fields have a Vocabulary, and not all fields have any items in
+        their corresponding KeywordIndex
+        """
+        if one and two:
+            return one + two
+        elif one:
+            return one
+        elif two:
+            return two
+        return default
 
 registerWidget(AddRemoveWidget,
                 title = 'Add/Remove widget',
