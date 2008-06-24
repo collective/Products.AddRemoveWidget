@@ -46,7 +46,7 @@
                             size           widget/size;
                             
                             isKWfield      python:widget.is_keyword_field(field);
-                            indexKWs       python:isKWfield and widget.vocabify(context.collectKeywords(fieldName, field.accessor )) or [];
+                            indexKWs       python:isKWfield and widget.vocabify(context.collectKeywords(fieldName, field.accessor, widget.vocab_source )) or [];
                             vocabulary     python:test(isKWfield,widget.combine(indexKWs,vocabulary,vocabulary),vocabulary);
                             
                             roleBasedAdd   widget/role_based_add;

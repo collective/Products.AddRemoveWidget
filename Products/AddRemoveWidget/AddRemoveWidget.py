@@ -40,6 +40,10 @@ class AddRemoveWidget(TypesWidget):
                             # Property in site_properties listing which roles
                             #  can add new items
                             'add_role_property' : 'allowRolesToAddKeywords',
+                            
+                            # Does the keyword vocab come from somewhere other
+                            #  than portal_catalog?
+                            'vocab_source'      : 'portal_catalog',
 
                             # Size (num items) and width (measurement) of boxes
                             # Set width_absolute to 1 make width be fixed; else
