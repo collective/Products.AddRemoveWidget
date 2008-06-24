@@ -3,7 +3,7 @@
     
     <adapters>
         <adapter name="Products.AddRemoveWidget.SubjectAdapter"
-                 factory="Products.AddRemoveWidget.subjectfield_adapter.SchemaModifier"
+                 factory="Products.AddRemoveWidget.linesfield_adapter.SchemaModifier"
                  for_="Products.ATContentTypes.content.base.IBaseContent"
                  provides="archetypes.schemaextender.interfaces.ISchemaModifier" />
     </adapters>
