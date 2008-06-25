@@ -7,7 +7,7 @@ from Products.AddRemoveWidget.config import *
 def install(self):
     out = StringIO()
     install_subskin(self, out, GLOBALS)
-    if ALWAYS_MODIFY_SUBJECT:
+    if ALWAYS_MODIFY_WIDGETS:
         portal_setup = getToolByName(self, 'portal_setup')
         portal_quickinstaller = getToolByName(self, 'portal_quickinstaller')
         profilename = 'Products.' + PROJECTNAME + ':default'

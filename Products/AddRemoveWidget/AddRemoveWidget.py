@@ -4,7 +4,7 @@
 
 from Products.Archetypes.Widget import TypesWidget
 from Products.Archetypes.Registry import registerWidget
-from Products.Archetypes.utils import DisplayList
+from Products.Archetypes.atapi import DisplayList
 
 from Products.CMFCore.utils import getToolByName
 
@@ -74,7 +74,7 @@ class AddRemoveWidget(TypesWidget):
                     idx.meta_type == 'KeywordIndex' ]
         return filtered != []
     
-    def vocabify(self,list):
+    def makeDL(self,list):
         """Takes in a list (of keywords) and returns a display list that
         is expected by the Vocabulary machinery.
         """
@@ -82,19 +82,6 @@ class AddRemoveWidget(TypesWidget):
         for i in list:
             dl.add(i,i)
         return dl
-    
-    def combine(self,one,two,default):
-        """Util func to add two Display Lists together for the template because
-        not all fields have a Vocabulary, and not all fields have any items in
-        their corresponding KeywordIndex
-        """
-        if one and two:
-            return one + two
-        elif one:
-            return one
-        elif two:
-            return two
-        return default
 
 registerWidget(AddRemoveWidget,
                 title = 'Add/Remove widget',

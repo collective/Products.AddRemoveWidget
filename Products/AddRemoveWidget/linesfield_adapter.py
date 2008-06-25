@@ -25,6 +25,6 @@ class SchemaModifier(object):
             oldlabel = field.widget.label
             olddesc  = field.widget.description
             field.widget = AddRemoveWidget(label=oldlabel,
-                                                       description = olddesc,
-                                                       role_based_add = True)
+                                           description = olddesc,
+                                           role_based_add = True)
         
