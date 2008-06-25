@@ -64,9 +64,9 @@ class AddRemoveWidget(TypesWidget):
             return empty_marker
         return value, {}
 
-    def is_keyword_field(self, field, source = 'portal_catalog'):
+    def is_keyword_field(self, field, source = self.vocab_source):
         """Returns whether or not a given field has a corresponding KeywordIndex
-        in the specified catalog (defaults to 'portal_catalog').
+        in the specified catalog (defaults to the widget's vocab source).
         """
         catalog = getToolByName(self,source)
         idxs = catalog.index_objects()
