@@ -45,7 +45,7 @@
                             width_absolute widget/width_absolute;
                             size           widget/size;
                             
-                            isKWfield      python:widget.is_keyword_field(field);
+                            isKWfield      python:widget.is_keyword_field(field,widget.vocab_source);
                             indexKWs       python:isKWfield and widget.makeDL(context.collectKeywords(fieldName, field.accessor, widget.vocab_source )) or widget.makeDL([]);
                             vocabulary     python:indexKWs + vocabulary;
                             
