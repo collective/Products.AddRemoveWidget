@@ -3,5 +3,4 @@
 PROJECTNAME = "AddRemoveWidget"
 SKINS_DIR = 'skins'
 GLOBALS = globals()
-ALWAYS_MODIFY_WIDGETS = True
 
