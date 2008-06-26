@@ -4,6 +4,9 @@
 
 from Products.Archetypes.Widget import TypesWidget
 from Products.Archetypes.Registry import registerWidget
+from Products.Archetypes.atapi import DisplayList
+
+from Products.CMFCore.utils import getToolByName
 
 class AddRemoveWidget(TypesWidget):
     """Widget which presents two boxes, one with possible values, and one
@@ -37,6 +40,10 @@ class AddRemoveWidget(TypesWidget):
                             # Property in site_properties listing which roles
                             #  can add new items
                             'add_role_property' : 'allowRolesToAddKeywords',
+                            
+                            # Does the keyword vocab come from somewhere other
+                            #  than portal_catalog?
+                            'vocab_source'      : 'portal_catalog',
 
                             # Size (num items) and width (measurement) of boxes
                             # Set width_absolute to 1 make width be fixed; else
@@ -56,6 +63,25 @@ class AddRemoveWidget(TypesWidget):
         if value == '' or value == [''] and emptyReturnsMarker:
             return empty_marker
         return value, {}
+
+    def is_keyword_field(self, field, source):
+        """Returns whether or not a given field has a corresponding KeywordIndex
+        in the specified catalog (source).
+        """
+        catalog = getToolByName(self,source)
+        idxs = catalog.index_objects()
+        filtered = [idx for idx in idxs if idx.id == field.accessor and
+                    idx.meta_type == 'KeywordIndex' ]
+        return filtered != []
+    
+    def makeDL(self,list):
+        """Takes in a list (of keywords) and returns a display list that
+        is expected by the Vocabulary machinery.
+        """
+        dl = DisplayList()
+        for i in list:
+            dl.add(i,i)
+        return dl
 
 registerWidget(AddRemoveWidget,
                 title = 'Add/Remove widget',

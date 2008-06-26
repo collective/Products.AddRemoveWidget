@@ -1,6 +1,5 @@
 from StringIO import StringIO
-from Products.CMFCore.utils import getToolByName
-from Products.Archetypes.Extensions.utils import installTypes, install_subskin
+from Products.Archetypes.Extensions.utils import install_subskin
 
 from Products.AddRemoveWidget.config import *
 
