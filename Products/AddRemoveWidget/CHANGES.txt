@@ -1,2 +1,0 @@
-1.2
-  Added logic for drop-in replacement of KeywordWidget - dunlapm

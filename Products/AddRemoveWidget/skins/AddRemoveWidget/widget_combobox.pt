@@ -83,7 +83,7 @@
             <tr>
             <td class="formHelp" i18n:translate="label_other">Other:</td>
             <td valign="top">
-                <input type="text" style="width: 100%"
+                <input type="text"
                            tal:attributes="id string:${fieldName}_other;
                                            name string:${fieldName}_other" />
             </td>
