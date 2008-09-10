@@ -38,15 +38,15 @@
       <metal:use use-macro="field_macro | here/widgets/field/macros/edit">
         <metal:widgetBody fill-slot="widget_body"
                 tal:define="value          python:edit_accessor();
-                            vocabulary     python:field.Vocabulary(here);
+                            vocabulary     python:field.Vocabulary(context);
                             allowAdd       not:field/enforceVocabulary;
                             
                             width          widget/width;
                             width_absolute widget/width_absolute;
                             size           widget/size;
                             
-                            isKWfield      python:widget.is_keyword_field(field,widget.vocab_source);
-                            indexKWs       python:isKWfield and widget.makeDL(context.collectKeywords(fieldName, field.accessor, widget.vocab_source )) or widget.makeDL([]);
+                            isKWfield      python:widget.is_keyword_field(field,widget.vocab_source) and not vocabulary;
+                            indexKWs       python:isKWfield and widget.makeVocab(context.collectKeywords(fieldName, field.accessor, widget.vocab_source )) or widget.makeVocab([]);
                             vocabulary     python:indexKWs + vocabulary;
                             
                             roleBasedAdd   widget/role_based_add;
