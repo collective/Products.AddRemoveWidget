@@ -1,7 +1,11 @@
 Changelog
 =========
 
-1.4 - Unreleased
+1.5 - Unreleased
+----------------
+
+
+1.4 - 2008-09-10
 ----------------
 
 * Fixed error with duplication of entries in the Available column. This fixes
