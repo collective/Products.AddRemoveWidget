@@ -44,9 +44,10 @@
                             width          widget/width;
                             width_absolute widget/width_absolute;
                             size           widget/size;
-                            
-                            isKWfield      python:widget.is_keyword_field(field,widget.vocab_source) and not vocabulary;
-                            indexKWs       python:isKWfield and widget.makeVocab(context.collectKeywords(fieldName, field.accessor, widget.vocab_source )) or widget.makeVocab([]);
+
+                            vocab_source   python:getattr(widget,'vocab_source','portal_catalog');
+                            isKWfield      python:widget.is_keyword_field(field,vocab_source) and not vocabulary;
+                            indexKWs       python:isKWfield and widget.makeVocab(context.collectKeywords(fieldName, field.accessor, vocab_source)) or widget.makeVocab([]);
                             vocabulary     python:indexKWs + vocabulary;
                             
                             roleBasedAdd   widget/role_based_add;
