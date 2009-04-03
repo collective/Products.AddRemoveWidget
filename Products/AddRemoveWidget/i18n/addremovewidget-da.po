@@ -16,6 +16,11 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: AddRemoveWidget\n"
 
+#. Default: "Please select an item"
+#: ../skins/AddRemoveWidget/widget_addremove_vars.js
+msgid "alert_please_select_an_item"
+msgstr ""
+
 #. Default: "Add "
 #: ../skins/AddRemoveWidget/widget_addremove.pt
 msgid "button_add_item"

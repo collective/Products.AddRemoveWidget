@@ -6,14 +6,21 @@ msgstr ""
 "Project-Id-Version: addremovewidget-es\n"
 "POT-Creation-Date: 2006-11-08 10:01+0000\n"
 "PO-Revision-Date: 2007-06-29 07:15+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Language-Code: es\n"
 "Language-Name: Español\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: AddRemoveWidget\n"
+
+#. Default: "Please select an item"
+#: ../skins/AddRemoveWidget/widget_addremove_vars.js
+msgid "alert_please_select_an_item"
+msgstr "Por favor, selecciona un elemento"
 
 #. Default: "Add "
 #: ../skins/AddRemoveWidget/widget_addremove.pt
@@ -49,9 +56,4 @@ msgstr "Otro:"
 #: ../skins/AddRemoveWidget/widget_addremove.pt
 msgid "label_selected_items"
 msgstr "Seleccionado:"
-
-#. Default: "Please select an item"
-#: ../skins/AddRemoveWidget/widget_addremove_vars.js
-msgid "alert_please_select_an_item"
-msgstr "Por favor, selecciona un elemento"
 

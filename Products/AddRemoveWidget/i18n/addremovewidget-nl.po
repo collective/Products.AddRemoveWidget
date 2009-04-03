@@ -6,16 +6,23 @@ msgstr ""
 "Project-Id-Version: addremovewidget-nl\n"
 "POT-Creation-Date: 2006-11-08 10:01+0000\n"
 "PO-Revision-Date: 2007-06-29 07:15+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Language-Code: nl\n"
 "Language-Name: Nederlands\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: AddRemoveWidget\n"
 "X-Is-Fallback-For: nl-be\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#. Default: "Please select an item"
+#: ../skins/AddRemoveWidget/widget_addremove_vars.js
+msgid "alert_please_select_an_item"
+msgstr "Gelieve een item te selecteren"
 
 #. Default: "Add "
 #: ../skins/AddRemoveWidget/widget_addremove.pt
@@ -51,9 +58,4 @@ msgstr "Andere :"
 #: ../skins/AddRemoveWidget/widget_addremove.pt
 msgid "label_selected_items"
 msgstr "Geselecteerd :"
-
-#. Default: "Please select an item"
-#: ../skins/AddRemoveWidget/widget_addremove_vars.js
-msgid "alert_please_select_an_item"
-msgstr "Gelieve een item te selecteren"
 
