@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<object name="portal_skins">
+ <object name="AddRemoveWidget" meta_type="Filesystem Directory View"
+    directory="AddRemoveWidget/skins/AddRemoveWidget"/>
+ <skin-path name="*">
+  <layer name="AddRemoveWidget"
+         insert-after="custom"/>
+ </skin-path>
+</object>

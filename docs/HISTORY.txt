@@ -4,6 +4,9 @@ Changelog
 1.5 - Unreleased
 ----------------
 
+* removed old-style install, added profile, moved version to setup.py
+  [jensens]
+
 
 1.4 - 2008-09-10
 ----------------

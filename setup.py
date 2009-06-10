@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = open(os.path.join("Products", "AddRemoveWidget", "version.txt")).read().strip()
+version = '1.5'
 
 setup(name='Products.AddRemoveWidget',
       version=version,
