@@ -1,7 +1,9 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.5'
+# attention, for BBB-reasons, the version is also held in the packages
+# version.txt file. the file can be removed if we give up support of Plone<3.3.
+version = '1.5dev'
 
 setup(name='Products.AddRemoveWidget',
       version=version,
