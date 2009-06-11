@@ -3,7 +3,7 @@ import os
 
 # attention, for BBB-reasons, the version is also held in the packages
 # version.txt file. the file can be removed if we give up support of Plone<3.3.
-version = '1.5dev'
+version = open(os.path.join("Products", "AddRemoveWidget", "version.txt")).read().strip()
 
 setup(name='Products.AddRemoveWidget',
       version=version,
