@@ -24,23 +24,23 @@ class AddRemoveWidget(TypesWidget):
 
     If allow_add is 1, a text field with a corresponding 'New' button allows
     users to add new items to the target list. This can be further controlled
-    by setting role_based_add to 1 and defining the name of a lines-type 
+    by setting role_based_add to 1 and defining the name of a lines-type
     property in portal_properties/site_properties giving a list of roles
-    which will be allowed to add items, in the same manner as 
+    which will be allowed to add items, in the same manner as
     allowRolesToAddKeywords works for the KeywordWidget.
     """
 
     _properties = TypesWidget._properties.copy()
     _properties.update({    'macro'              : 'widget_addremove',
                             'helper_js'         : ('widget_addremove_vars.js','widget_addremove.js',),
-                            
+
                             # Only some roles can add new items?
                             'role_based_add'    : 0,
-                           
+
                             # Property in site_properties listing which roles
                             #  can add new items
                             'add_role_property' : 'allowRolesToAddKeywords',
-                            
+
                             # Does the keyword vocab come from somewhere other
                             #  than portal_catalog?
                             'vocab_source'      : 'portal_catalog',
@@ -52,7 +52,7 @@ class AddRemoveWidget(TypesWidget):
                             'width'             : '10em',
                             'width_absolute'    : 0,
                          },)
-                         
+
     def process_form(self, instance, field, form, empty_marker=None,
                      emptyReturnsMarker=False):
         """If a value was typed in the box, use this, else use the selected
@@ -73,7 +73,7 @@ class AddRemoveWidget(TypesWidget):
         filtered = [idx for idx in idxs if idx.id == field.accessor and
                     idx.meta_type == 'KeywordIndex' ]
         return filtered != []
-    
+
     def makeVocab(self,list):
         """Takes in a list (of keywords) and returns a Vocabulary without a
         translation domain.
@@ -82,7 +82,7 @@ class AddRemoveWidget(TypesWidget):
         for i in list:
             dl.add(i,i)
         return Vocabulary(dl,None,None)
-    
+
     #def removeI18nDomain(self,vocab):
     #    if not isinstance(vocab,(Vocabulary,DisplayList)):
     #        raise ValueError, "Not a vocabulary or DisplayList!"

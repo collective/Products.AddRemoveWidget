@@ -11,21 +11,21 @@ class ComboBoxWidget(TypesWidget):
     """Widget which presents a list box with a vocabulary, and an text box
     for optionally typing a value.
     """
-    
+
     security = ClassSecurityInfo()
 
     _properties = TypesWidget._properties.copy()
     _properties.update({    'macro'             : 'widget_combobox',
-                            
+
                             # Size (num items) and width (measurement) of boxes
                             # Set width_absolute to 1 make width be fixed; else
                             #  it defines the min-width only.
-                            
+
                             'size'              : '7',
                             'width'             : '10em',
                             'width_absolute'    : 0,
                         },)
-                        
+
     security.declarePublic('process_form')
     def process_form(self, instance, field, form, empty_marker=None,
                      emptyReturnsMarker=False):
@@ -38,7 +38,7 @@ class ComboBoxWidget(TypesWidget):
         # If value is an empty string we check if the selection box have an usable value
         if value is empty_marker or not value:
             value = form.get(name, empty_marker)
-        if (not value or value == empty_marker) and emptyReturnsMarker: 
+        if (not value or value == empty_marker) and emptyReturnsMarker:
             return empty_marker
         return value, {}
 
