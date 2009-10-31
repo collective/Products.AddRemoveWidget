@@ -1,12 +1,14 @@
 Changelog
 =========
 
+
 1.5 - Unreleased
 ----------------
+* add |nothing to tabindex in template for not breaking plone 4
+  [maartenkling]
 
 * removed old-style install, added profile, moved version to setup.py
   [jensens]
-
 
 1.4 - 2008-09-10
 ----------------
@@ -14,7 +16,7 @@ Changelog
 * Fixed error with duplication of entries in the Available column. This fixes
   issue #9.
   [dunlapm]
-  
+
 * Fixed the long-standing issue with non-ascii characters in terms gathered from
   the catalog. Proper vocabularies should be just that, proper vocabularies
   where the "id" of a term consists of ascii characters and the "value" can
