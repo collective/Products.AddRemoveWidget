@@ -83,10 +83,10 @@ class AddRemoveWidget(TypesWidget):
             dl.add(i,i)
         return Vocabulary(dl,None,None)
 
-    #def removeI18nDomain(self,vocab):
-    #    if not isinstance(vocab,(Vocabulary,DisplayList)):
-    #        raise ValueError, "Not a vocabulary or DisplayList!"
-    #    return Vocabulary(vocab,None,None)
+    def removeI18nDomain(self,vocab):
+        if not isinstance(vocab,(Vocabulary,DisplayList)):
+            raise ValueError, "Not a vocabulary or DisplayList!"
+        return Vocabulary(vocab,None,None)
 
 registerWidget(AddRemoveWidget,
                 title = 'Add/Remove widget',

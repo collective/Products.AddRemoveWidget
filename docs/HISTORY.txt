@@ -4,7 +4,9 @@ Changelog
 1.4.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fixed ASCII decode error (#10) by filtering the field vocabulary.
+  See issue tracker ticket for more details.
+  [dunlapm]
 
 
 1.4.2 (2009-11-04)

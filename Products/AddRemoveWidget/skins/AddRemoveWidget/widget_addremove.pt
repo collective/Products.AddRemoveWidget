@@ -48,7 +48,7 @@
                             vocab_source   python:getattr(widget,'vocab_source','portal_catalog');
                             isKWfield      python:widget.is_keyword_field(field,vocab_source) and not vocabulary;
                             indexKWs       python:isKWfield and widget.makeVocab(context.collectKeywords(fieldName, field.accessor, vocab_source)) or widget.makeVocab([]);
-                            vocabulary     python:indexKWs + vocabulary;
+                            vocabulary     python:indexKWs + widget.removeI18nDomain(vocabulary);
 
                             roleBasedAdd   widget/role_based_add;
                             site_props     here/portal_properties/site_properties;
@@ -92,7 +92,7 @@
                   <tal:block repeat="item vocabulary/keys">
                     <option
                         value="#"
-                        tal:condition="python:item not in selectedItems"
+                        tal:condition="python:not context.unicodeTestIn(item,selectedItems)"
                         tal:content="python:vocabulary.getValue(item)"
                         tal:attributes="value item;">Item</option>
                   </tal:block>
