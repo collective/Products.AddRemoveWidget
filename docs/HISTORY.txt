@@ -4,8 +4,13 @@ Changelog
 1.4.3 (unreleased)
 ------------------
 
-- Fixed ASCII decode error (#10) by filtering the field vocabulary.
-  See issue tracker ticket for more details.
+- Fixed iteration over non-sequence in case of blank field, in
+  combination with LinguaPlone.  Patch by Izak Burger.
+  See http://plone.org/products/addremovewidget/issues/12
+  [maurits]
+
+- Fixed ASCII decode error by filtering the field vocabulary.
+  See http://plone.org/products/addremovewidget/issues/10
   [dunlapm]
 
 

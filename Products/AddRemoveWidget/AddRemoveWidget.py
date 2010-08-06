@@ -60,6 +60,8 @@ class AddRemoveWidget(TypesWidget):
         """
         name = field.getName()
         value = form.get(name, empty_marker)
+        if value is empty_marker:
+            return empty_marker
         if value == '' or value == [''] and emptyReturnsMarker:
             return empty_marker
         return value, {}
