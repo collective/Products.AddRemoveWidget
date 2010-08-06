@@ -8,6 +8,7 @@ from Products.Archetypes.atapi import Vocabulary, DisplayList
 
 from Products.CMFCore.utils import getToolByName
 
+
 class AddRemoveWidget(TypesWidget):
     """Widget which presents two boxes, one with possible values, and one
     with selected values, with add/remove buttons to move items between them.
@@ -31,27 +32,29 @@ class AddRemoveWidget(TypesWidget):
     """
 
     _properties = TypesWidget._properties.copy()
-    _properties.update({    'macro'              : 'widget_addremove',
-                            'helper_js'         : ('widget_addremove_vars.js','widget_addremove.js',),
+    _properties.update(
+        {'macro': 'widget_addremove',
+         'helper_js': ('widget_addremove_vars.js', 'widget_addremove.js', ),
 
-                            # Only some roles can add new items?
-                            'role_based_add'    : 0,
+         # Only some roles can add new items?
+         'role_based_add': 0,
 
-                            # Property in site_properties listing which roles
-                            #  can add new items
-                            'add_role_property' : 'allowRolesToAddKeywords',
+         # Property in site_properties listing which roles can add new
+         # items.
+         'add_role_property': 'allowRolesToAddKeywords',
 
-                            # Does the keyword vocab come from somewhere other
-                            #  than portal_catalog?
-                            'vocab_source'      : 'portal_catalog',
+         # Does the keyword vocab come from somewhere other than
+         # portal_catalog?
+         'vocab_source': 'portal_catalog',
 
-                            # Size (num items) and width (measurement) of boxes
-                            # Set width_absolute to 1 make width be fixed; else
-                            #  it defines the min-width only.
-                            'size'              : '7',
-                            'width'             : '10em',
-                            'width_absolute'    : 0,
-                         },)
+         # Size (num items) and width (measurement) of boxes
+         # Setting width_absolute to 1 makes width fixed; else
+         # it defines the min-width only.
+         'size': '7',
+         'width': '10em',
+         'width_absolute': 0,
+         },
+        )
 
     def process_form(self, instance, field, form, empty_marker=None,
                      emptyReturnsMarker=False):
@@ -67,31 +70,32 @@ class AddRemoveWidget(TypesWidget):
         return value, {}
 
     def is_keyword_field(self, field, source):
-        """Returns whether or not a given field has a corresponding KeywordIndex
-        in the specified catalog (source).
+        """Returns whether or not a given field has a corresponding
+        KeywordIndex in the specified catalog (source).
         """
-        catalog = getToolByName(self,source)
+        catalog = getToolByName(self, source)
         idxs = catalog.index_objects()
         filtered = [idx for idx in idxs if idx.id == field.accessor and
-                    idx.meta_type == 'KeywordIndex' ]
+                    idx.meta_type == 'KeywordIndex']
         return filtered != []
 
-    def makeVocab(self,list):
+    def makeVocab(self, list):
         """Takes in a list (of keywords) and returns a Vocabulary without a
         translation domain.
         """
         dl = DisplayList()
         for i in list:
-            dl.add(i,i)
-        return Vocabulary(dl,None,None)
+            dl.add(i, i)
+        return Vocabulary(dl, None, None)
 
-    def removeI18nDomain(self,vocab):
-        if not isinstance(vocab,(Vocabulary,DisplayList)):
-            raise ValueError, "Not a vocabulary or DisplayList!"
-        return Vocabulary(vocab,None,None)
+    def removeI18nDomain(self, vocab):
+        if not isinstance(vocab, (Vocabulary, DisplayList)):
+            raise ValueError("Not a vocabulary or DisplayList!")
+        return Vocabulary(vocab, None, None)
 
-registerWidget(AddRemoveWidget,
-                title = 'Add/Remove widget',
-                description= ('Renders a HTML widget with two list boxes and add/remove buttons',),
-                used_for = ('Products.Archetypes.Field.LinesField',)
-                )
+registerWidget(
+    AddRemoveWidget,
+    title='Add/Remove widget',
+    description=("Renders a HTML widget with two list boxes and "
+                 "add/remove buttons", ),
+    used_for=('Products.Archetypes.Field.LinesField',))
