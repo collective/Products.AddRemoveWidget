@@ -4,6 +4,10 @@ Changelog
 1.4.3 (unreleased)
 ------------------
 
+- Fixed similar problem in ComboboxWidget.
+  See http://plone.org/products/addremovewidget/issues/4
+  [maurits]
+
 - Fixed iteration over non-sequence in case of blank field, in
   combination with LinguaPlone.  Patch by Izak Burger.
   See http://plone.org/products/addremovewidget/issues/12

@@ -38,7 +38,9 @@ class ComboBoxWidget(TypesWidget):
         # If value is an empty string we check if the selection box have an usable value
         if value is empty_marker or not value:
             value = form.get(name, empty_marker)
-        if (not value or value == empty_marker) and emptyReturnsMarker:
+        if value is empty_marker:
+            return empty_marker
+        if not value and emptyReturnsMarker:
             return empty_marker
         return value, {}
 
