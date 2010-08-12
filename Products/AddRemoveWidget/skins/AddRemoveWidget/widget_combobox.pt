@@ -67,7 +67,7 @@
                         tal:attributes="id          fieldName;
                                         name        fieldName;
                                         style       string:${widthSpec}:${width};
-                                        tabindex    tabindex/next;
+                                        tabindex    tabindex/next|nothing;
                                         size        size;">
                   <tal:block repeat="item vocabulary/keys">
                     <option
