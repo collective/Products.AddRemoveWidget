@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.4.4 (unreleased)
+1.4.4 (2010-08-16)
 ------------------
 
 * Added ``|nothing`` to tabindex in template for not breaking Plone 4 when 
