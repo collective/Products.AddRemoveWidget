@@ -92,7 +92,7 @@
                   <tal:block repeat="item vocabulary/keys">
                     <option
                         value="#"
-                        tal:condition="python:not context.unicodeTestIn(item,selectedItems)"
+                        tal:condition="python:not item in selectedItems"
                         tal:content="python:vocabulary.getValue(item)"
                         tal:attributes="value item;">Item</option>
                   </tal:block>
