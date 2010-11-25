@@ -116,7 +116,14 @@ function _addremove_updateSubmitField(field) {
 		node.value = value;
 		submitContainer.appendChild(node);
 	}
-	
+
+	// Add an empty node if no values are selected.
+	if (!selectedList.length) {
+	    var node = document.createElement('input');
+	    node.type = "hidden";
+	    node.name = field + ":list";
+	    submitContainer.appendChild(node);
+	}
 }
 
 // Sort the submit box

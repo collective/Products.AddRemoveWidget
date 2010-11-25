@@ -5,7 +5,9 @@ Changelog
 ------------------
 
 * Removed 'unicodeTestIn' call. This fixes #14.
-  [jaroel]
+  [jaroel/maerteijn]
+* Add empty element to submitContainer when no items are selected. Fixes #13.
+  [jaroel/maerteijn]
 
 1.4.4 (2010-08-16)
 ------------------
