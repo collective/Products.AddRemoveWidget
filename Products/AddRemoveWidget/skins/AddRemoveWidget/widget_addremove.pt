@@ -30,6 +30,7 @@
             width           - The width of the add boxes (default 10em)
             size            - The height of the add boxes (default 7)
             width_absolute  - Whether the width is absolute or min-width (default false)
+            ordered         - Whether items should be ordered
 
          and then include the macro add_remove_box. Be sure to include
          widget_addremove.js as well.
@@ -44,6 +45,8 @@
                             width          widget/width;
                             width_absolute widget/width_absolute;
                             size           widget/size;
+                            ordered        widget/ordered|nothing;
+                            js_auto_sort   python:ordered and 'false' or 'true';
 
                             vocab_source   python:getattr(widget,'vocab_source','portal_catalog');
                             isKWfield      python:widget.is_keyword_field(field,vocab_source) and not vocabulary;
@@ -88,7 +91,7 @@
                                         style       string:${widthSpec}:${width};
                                         tabindex    tabindex/next|nothing;
                                         size        size;
-                                        onDblClick  string:addremove_addItem('${fieldName}')">
+                                        onDblClick  string:addremove_addItem('${fieldName}', ${js_auto_sort})">
                   <tal:block repeat="item vocabulary/keys">
                     <option
                         value="#"
@@ -99,13 +102,13 @@
                 </select>
 
             </td>
-            <!-- Buttons -->
+            <!-- Add/Remove Buttons -->
             <td valign="middle" align="center">
                 <input type="button" value="Add &gt;"
                        style="width: 100%;" onClick=""
                        i18n:attributes="value button_add_item;"
                        tal:attributes="tabindex tabindex/next|nothing;
-                                    onClick  string:addremove_addItem('${fieldName}')"/><br/>
+                                    onClick  string:addremove_addItem('${fieldName}', ${js_auto_sort})"/><br/>
                 <input type="button" value="&lt; Remove"
                        style="width: 100%; margin: 0"
                        i18n:attributes="value button_remove_item;"
@@ -137,6 +140,21 @@
                 </select>
 
             </td>
+            <!-- Up/Down Buttons -->
+            <td valign="middle" align="center">
+                <tal:if condition="ordered"> 
+                <input type="button" value="Up"
+                       style="width: 100%;" onClick=""
+                       i18n:attributes="value button_up_item;"
+                       tal:attributes="tabindex tabindex/next|nothing;
+                                    onClick  string:addremove_upItem('${fieldName}')"/><br/>
+                <input type="button" value="Down"
+                       style="width: 100%;"
+                       i18n:attributes="value button_down_item;"
+                       tal:attributes="tabindex tabindex/next|nothing;
+                                       onClick  string:addremove_downItem('${fieldName}')"/>
+                </tal:if>
+            </td>
             </tr>
 
             <!-- Add button -->
@@ -148,14 +166,14 @@
                                tal:attributes="id addBox"/>
                 </div>
             </td>
-            <td align="center" valign="middle">
+            <td align="center" valign="middle" colspan="2">
                 <div style="margin-top: 1em">
                     <input type="button" value="&gt; Add New Value"
                            style="width: 100%; margin: 0"
                            onClick=""
                            i18n:attributes="value button_add_new_item;"
                            tal:attributes="tabindex tabindex/next|nothing;
-                                           onClick  string:addremove_addNewItem('${fieldName}')"/>
+                                           onClick  string:addremove_addNewItem('${fieldName}', ${js_auto_sort})"/>
                 </div>
             </td>
             </tr>

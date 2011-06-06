@@ -53,6 +53,9 @@ class AddRemoveWidget(TypesWidget):
          'size': '7',
          'width': '10em',
          'width_absolute': 0,
+
+         # Should items be ordered?
+         'ordered': False,
          },
         )
 

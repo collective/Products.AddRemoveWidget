@@ -4,12 +4,12 @@
  
 
 // add input from an inputbox
-function addremove_addNewItem(field) {
+function addremove_addNewItem(field, sort) {
 
   	var inputBox   = document.getElementById(field + "_new");
   	var targetList = document.getElementById(field + "_selected");
   
- 	if(_addremove_addToList(targetList, inputBox.value, inputBox.value)) {
+ 	if(_addremove_addToList(targetList, inputBox.value, inputBox.value, sort)) {
   		_addremove_updateSubmitField(field);
 		inputBox.value = "";
 		return true;
@@ -19,14 +19,14 @@ function addremove_addNewItem(field) {
 }
 
 // add the selected item from the "from" box to the "to" box
-function addremove_addItem(field) {
+function addremove_addItem(field, sort) {
 
 	var sourceList = document.getElementById(field + "_unselected");
 	var targetList = document.getElementById(field + "_selected");
 	
 	var idx = sourceList.selectedIndex;
 
-	if(_addremove_moveItem(sourceList, idx, targetList)) {
+	if(_addremove_moveItem(sourceList, idx, targetList, sort)) {
 		_addremove_updateSubmitField(field);
 		return true;
 	} else {
@@ -43,7 +43,7 @@ function addremove_removeItem(field) {
 	
 	var idx = sourceList.selectedIndex;
 
-	if(_addremove_moveItem(sourceList, idx, targetList)) {
+	if(_addremove_moveItem(sourceList, idx, targetList, 'true')) {
 		_addremove_updateSubmitField(field);
 		return true;
 	} else {
@@ -52,19 +52,65 @@ function addremove_removeItem(field) {
 
 }
 
+// move selected in "to" box item on one position up
+function addremove_upItem(field) {
+  var sourceList = document.getElementById(field + "_selected");
+  var idx = sourceList.selectedIndex;
+
+  if (idx == -1) {
+    alert(string_addremove_moveItem);
+    return false;
+  } else if (sourceList.options[0].selected) {
+    alert(string_addremove_upItem);
+    return false;
+  } else {
+    for (var i = 0; i < sourceList.length; i++) {
+      if (sourceList.options[i].selected) {
+        _swapFields(sourceList.options[i-1], sourceList.options[i]);
+      }
+    }
+  }
+  
+  _addremove_updateSubmitField(field);
+  return true;
+}
+
+// move selected in "to" box item on one position down
+function addremove_downItem(field) {
+  var sourceList = document.getElementById(field + "_selected");
+  var idx = sourceList.selectedIndex;
+
+  if (idx == -1) {
+    alert(string_addremove_moveItem);
+    return false;
+  } else if (sourceList.options[sourceList.length-1].selected) {
+    alert(string_addremove_downItem);
+    return false;
+  } else {
+    for (var i = sourceList.length-1; i >= 0; i--) {
+      if (sourceList.options[i].selected) {
+        _swapFields(sourceList.options[i+1], sourceList.options[i]);
+      }
+    }
+  }
+  
+  _addremove_updateSubmitField(field);
+  return true;
+}
+
 /*
  * Helper functions
  */
  
 // Move an item from one list to another
-function _addremove_moveItem(sourceList, idx, targetList) {
+function _addremove_moveItem(sourceList, idx, targetList, sort) {
 
   var success = false;
 
   if(idx >= 0) {
 	success = _addremove_addToList(targetList, 
 									sourceList[idx].text, 
-  								    sourceList[idx].value)
+  								    sourceList[idx].value, sort);
   	if(success)
 	  sourceList[idx] = null;
   } else {
@@ -75,7 +121,7 @@ function _addremove_moveItem(sourceList, idx, targetList) {
 }
 
 // add a new item to the given list
-function _addremove_addToList(targetList, newText, newValue) {
+function _addremove_addToList(targetList, newText, newValue, sort) {
 
   	// ensure we don't have it already
   	for(var i = 0; i < targetList.length; ++i) {
@@ -89,7 +135,9 @@ function _addremove_addToList(targetList, newText, newValue) {
   	targetList[newIdx]       = new Option(_trimString(newText));
   	targetList[newIdx].value = _trimString(newValue);
 	
-	_addremove_sortListBox(targetList);
+	if (sort) {
+	  _addremove_sortListBox(targetList);
+  }
 
   	return true;
 }
@@ -158,6 +206,24 @@ function _addremove_sortListBox(list) {
 									 options[i].defaultSelected, 
 									 options[i].selected);
 	}
+}
+
+// Swapt select element options
+function _swapFields(a, b) {
+  // swap text
+  var temp = a.text;
+  a.text = b.text;
+  b.text = temp;
+  
+  // swap value
+  temp = a.value;
+  a.value = b.value;
+  b.value = temp;
+  
+  // swap selection
+  temp = a.selected;
+  a.selected = b.selected;
+  b.selected = temp;
 }
 
 function _printTree(node, str) {

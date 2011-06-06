@@ -1,11 +1,15 @@
 Changelog
 =========
 
-1.4.5 (unreleased)
+1.4.5 (2011-06-06)
 ------------------
+
+* Added ordering support as an optional feature.
+  [piv]
 
 * Removed 'unicodeTestIn' call. This fixes #14.
   [jaroel/maerteijn]
+
 * Add empty element to submitContainer when no items are selected. Fixes #13.
   [jaroel/maerteijn]
 
