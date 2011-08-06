@@ -12,6 +12,8 @@ by the user, though it does support adding of referenced objects, which
 AddRemove does not. You are advised to test both to find out which one is 
 more suitable for your needs.
 
+Optionally AddRemoveWidget supports keywords ordering.
+
 Please see the docstring in AddRemoveWidget.py for a list of options you
 may pass to the widget to configure it.
 
