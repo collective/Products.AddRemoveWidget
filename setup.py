@@ -4,7 +4,7 @@ import os
 # attention, for BBB-reasons, the version is also held in the packages
 # version.txt file. the file can be removed if we give up support of Plone<3.3.
 version = open(os.path.join("Products", "AddRemoveWidget", "version.txt")).read().strip()
-readme = open(os.path.join("Products", "AddRemoveWidget", "README.txt")).read()
+readme = open("README.rst").read()
 history = open(os.path.join("docs", "HISTORY.txt")).read()
 long_description = readme + "\n\n" + history
 
