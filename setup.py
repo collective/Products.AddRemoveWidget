@@ -1,9 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-# attention, for BBB-reasons, the version is also held in the packages
-# version.txt file. the file can be removed if we give up support of Plone<3.3.
-version = open(os.path.join("Products", "AddRemoveWidget", "version.txt")).read().strip()
+version = '1.5.0.dev0'
 readme = open("README.rst").read()
 history = open("CHANGES.txt").read()
 long_description = readme + "\n\n" + history
