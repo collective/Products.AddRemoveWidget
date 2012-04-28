@@ -142,7 +142,7 @@
             </td>
             <!-- Up/Down Buttons -->
             <td valign="middle" align="center">
-                <tal:if condition="ordered"> 
+                <tal:if condition="ordered">
                 <input type="button" value="Up"
                        style="width: 100%;" onClick=""
                        i18n:attributes="value button_up_item;"
