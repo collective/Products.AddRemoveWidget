@@ -1,9 +1,11 @@
 <configure xmlns="http://namespaces.zope.org/zope"
            xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
            xmlns:cmf="http://namespaces.zope.org/cmf"
+           xmlns:i18n="http://namespaces.zope.org/i18n"
            i18n_domain="AddRemoveWidget">
 
   <cmf:registerDirectory name="AddRemoveWidget"/>
+  <i18n:registerTranslations directory="locales" />
 
   <genericsetup:registerProfile
       name="default"
