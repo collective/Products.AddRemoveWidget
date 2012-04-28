@@ -5,7 +5,7 @@ import os
 # version.txt file. the file can be removed if we give up support of Plone<3.3.
 version = open(os.path.join("Products", "AddRemoveWidget", "version.txt")).read().strip()
 readme = open("README.rst").read()
-history = open(os.path.join("docs", "HISTORY.txt")).read()
+history = open("CHANGES.txt").read()
 long_description = readme + "\n\n" + history
 
 setup(name='Products.AddRemoveWidget',
