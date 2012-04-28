@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: AddRemoveWidget\n"
-"POT-Creation-Date: 2006-11-08 10:01+0000\n"
+"POT-Creation-Date: 2012-04-28 23:29+0000\n"
 "PO-Revision-Date: 2006-11-08 11:05+0100\n"
 "Last-Translator: Radim Novotny <novotny.radim@gmail.com>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -16,43 +16,52 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin2\n"
 "Domain: AddRemoveWidget\n"
 
-#. Default: "Please select an item"
-#: ../skins/AddRemoveWidget/widget_addremove_vars.js
-msgid "alert_please_select_an_item"
-msgstr ""
-
-#. Default: "Add "
-#: ../skins/AddRemoveWidget/widget_addremove.pt
+#. Default: "Add >"
+#: ./skins/AddRemoveWidget/widget_addremove.pt:107
+#, fuzzy
 msgid "button_add_item"
 msgstr "Přidat"
 
-#. Default: " Add New "
-#: ../skins/AddRemoveWidget/widget_addremove.pt
+#. Default: "> Add New Value"
+#: ./skins/AddRemoveWidget/widget_addremove.pt:171
+#, fuzzy
 msgid "button_add_new_item"
 msgstr "Vložit"
 
-#. Default: " Remove"
-#: ../skins/AddRemoveWidget/widget_addremove.pt
+#. Default: "Down"
+#: ./skins/AddRemoveWidget/widget_addremove.pt:151
+msgid "button_down_item"
+msgstr ""
+
+#. Default: "< Remove"
+#: ./skins/AddRemoveWidget/widget_addremove.pt:112
+#, fuzzy
 msgid "button_remove_item"
 msgstr "Odebrat"
 
+#. Default: "Up"
+#: ./skins/AddRemoveWidget/widget_addremove.pt:146
+msgid "button_up_item"
+msgstr ""
+
 #. Default: "Available:"
-#: ../skins/AddRemoveWidget/widget_addremove.pt
+#: ./skins/AddRemoveWidget/widget_addremove.pt:80
 msgid "label_available_items"
 msgstr "Dostupné:"
 
-#. Default: "New value:"
-#: ../skins/AddRemoveWidget/widget_addremove.pt
+#. Default: "New Value:"
+#: ./skins/AddRemoveWidget/widget_addremove.pt:164
+#, fuzzy
 msgid "label_new_item_value"
 msgstr "Nová hodnota:"
 
 #. Default: "Other:"
-#: ../skins/AddRemoveWidget/widget_combobox.pt
+#: ./skins/AddRemoveWidget/widget_combobox.pt:84
 msgid "label_other"
 msgstr "Ostatní:"
 
 #. Default: "Selected:"
-#: ../skins/AddRemoveWidget/widget_addremove.pt
+#: ./skins/AddRemoveWidget/widget_addremove.pt:122
 msgid "label_selected_items"
 msgstr "Vybrané:"
 

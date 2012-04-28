@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: addremovewidget-es\n"
-"POT-Creation-Date: 2006-11-08 10:01+0000\n"
+"POT-Creation-Date: 2012-04-28 23:29+0000\n"
 "PO-Revision-Date: 2007-06-29 07:15+0200\n"
 "Last-Translator: Enrique Pérez <eperez@yaco.es>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
@@ -18,43 +18,52 @@ msgstr ""
 "Domain: AddRemoveWidget\n"
 "X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
 
-#. Default: "Please select an item"
-#: ../skins/AddRemoveWidget/widget_addremove_vars.js
-msgid "alert_please_select_an_item"
-msgstr "Por favor, selecciona un elemento"
-
-#. Default: "Add "
-#: ../skins/AddRemoveWidget/widget_addremove.pt
+#. Default: "Add >"
+#: ./skins/AddRemoveWidget/widget_addremove.pt:107
+#, fuzzy
 msgid "button_add_item"
 msgstr "Añadir"
 
-#. Default: " Add New "
-#: ../skins/AddRemoveWidget/widget_addremove.pt
+#. Default: "> Add New Value"
+#: ./skins/AddRemoveWidget/widget_addremove.pt:171
+#, fuzzy
 msgid "button_add_new_item"
 msgstr "Añadir nuevo"
 
-#. Default: " Remove"
-#: ../skins/AddRemoveWidget/widget_addremove.pt
+#. Default: "Down"
+#: ./skins/AddRemoveWidget/widget_addremove.pt:151
+msgid "button_down_item"
+msgstr ""
+
+#. Default: "< Remove"
+#: ./skins/AddRemoveWidget/widget_addremove.pt:112
+#, fuzzy
 msgid "button_remove_item"
 msgstr "Eliminar"
 
+#. Default: "Up"
+#: ./skins/AddRemoveWidget/widget_addremove.pt:146
+msgid "button_up_item"
+msgstr ""
+
 #. Default: "Available:"
-#: ../skins/AddRemoveWidget/widget_addremove.pt
+#: ./skins/AddRemoveWidget/widget_addremove.pt:80
 msgid "label_available_items"
 msgstr "Disponible:"
 
-#. Default: "New value:"
-#: ../skins/AddRemoveWidget/widget_addremove.pt
+#. Default: "New Value:"
+#: ./skins/AddRemoveWidget/widget_addremove.pt:164
+#, fuzzy
 msgid "label_new_item_value"
 msgstr "Nuevo valor:"
 
 #. Default: "Other:"
-#: ../skins/AddRemoveWidget/widget_combobox.pt
+#: ./skins/AddRemoveWidget/widget_combobox.pt:84
 msgid "label_other"
 msgstr "Otro:"
 
 #. Default: "Selected:"
-#: ../skins/AddRemoveWidget/widget_addremove.pt
+#: ./skins/AddRemoveWidget/widget_addremove.pt:122
 msgid "label_selected_items"
 msgstr "Seleccionado:"
 
