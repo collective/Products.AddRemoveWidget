@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 version = '1.5.0.dev0'
 readme = open("README.rst").read()
-history = open("CHANGES.txt").read()
+history = open("CHANGES.rst").read()
 long_description = readme + "\n\n" + history
 
 setup(name='Products.AddRemoveWidget',
