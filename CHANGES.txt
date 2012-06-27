@@ -4,6 +4,10 @@ Changelog
 1.5.0 (unreleased)
 ------------------
 
+- Moved code to github:
+  https://github.com/collective/Products.AddRemoveWidget
+  [maurits]
+
 - Moved from i18n to locales.
   [maurits]
 
@@ -20,12 +24,14 @@ Changelog
 * Add empty element to submitContainer when no items are selected. Fixes #13.
   [jaroel/maerteijn]
 
+
 1.4.4 (2010-08-16)
 ------------------
 
 * Added ``|nothing`` to tabindex in template for not breaking Plone 4 when 
   using comboboxwidget.
   [saily]
+
 
 1.4.3 (2010-08-06)
 ------------------
