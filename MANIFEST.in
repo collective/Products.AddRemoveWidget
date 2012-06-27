@@ -3,4 +3,3 @@ recursive-include Products *
 include *.rst
 include *.txt
 global-exclude *pyc
-global-exclude *.mo
