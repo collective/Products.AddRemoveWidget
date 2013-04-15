@@ -19,12 +19,12 @@ msgstr ""
 #. Default: "Add >"
 #: ./skins/AddRemoveWidget/widget_addremove.pt:107
 msgid "button_add_item"
-msgstr "Přidat"
+msgstr "Přidat >"
 
 #. Default: "> Add New Value"
 #: ./skins/AddRemoveWidget/widget_addremove.pt:171
 msgid "button_add_new_item"
-msgstr "Vložit"
+msgstr "> Vložit"
 
 #. Default: "Down"
 #: ./skins/AddRemoveWidget/widget_addremove.pt:151
@@ -34,7 +34,7 @@ msgstr ""
 #. Default: "< Remove"
 #: ./skins/AddRemoveWidget/widget_addremove.pt:112
 msgid "button_remove_item"
-msgstr "Odebrat"
+msgstr "< Odebrat"
 
 #. Default: "Up"
 #: ./skins/AddRemoveWidget/widget_addremove.pt:146
