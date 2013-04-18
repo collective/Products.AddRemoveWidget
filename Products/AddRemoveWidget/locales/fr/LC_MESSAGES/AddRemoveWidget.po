@@ -22,50 +22,46 @@ msgstr ""
 
 #. Default: "Add >"
 #: ./skins/AddRemoveWidget/widget_addremove.pt:107
-#, fuzzy
 msgid "button_add_item"
-msgstr "Ajouter"
+msgstr "Ajouter >"
 
 #. Default: "> Add New Value"
 #: ./skins/AddRemoveWidget/widget_addremove.pt:171
-#, fuzzy
 msgid "button_add_new_item"
-msgstr "Nouveau"
+msgstr "> Nouveau"
 
 #. Default: "Down"
 #: ./skins/AddRemoveWidget/widget_addremove.pt:151
 msgid "button_down_item"
-msgstr ""
+msgstr "Vers le bas"
 
 #. Default: "< Remove"
 #: ./skins/AddRemoveWidget/widget_addremove.pt:112
-#, fuzzy
 msgid "button_remove_item"
-msgstr "Supprimer"
+msgstr "< Supprimer"
 
 #. Default: "Up"
 #: ./skins/AddRemoveWidget/widget_addremove.pt:146
 msgid "button_up_item"
-msgstr ""
+msgstr "Vers le haut"
 
 #. Default: "Available:"
 #: ./skins/AddRemoveWidget/widget_addremove.pt:80
 msgid "label_available_items"
-msgstr "Disponible :"
+msgstr "Disponible:"
 
 #. Default: "New Value:"
 #: ./skins/AddRemoveWidget/widget_addremove.pt:164
-#, fuzzy
 msgid "label_new_item_value"
-msgstr "Nouvelle entrée :"
+msgstr "Nouvelle entrée:"
 
 #. Default: "Other:"
 #: ./skins/AddRemoveWidget/widget_combobox.pt:84
 msgid "label_other"
-msgstr "Autre :"
+msgstr "Autre:"
 
 #. Default: "Selected:"
 #: ./skins/AddRemoveWidget/widget_addremove.pt:122
 msgid "label_selected_items"
-msgstr "Sélectionnées :"
+msgstr "Sélectionnées:"
 

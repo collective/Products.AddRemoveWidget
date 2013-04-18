@@ -4,7 +4,10 @@ Changelog
 1.5.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Updated french and german translations
+  [skaeser]
+- Removed fuzzy markers from translation files
+  [skaeser]
 
 
 1.5.0 (2012-06-27)

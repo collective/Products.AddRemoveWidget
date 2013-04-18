@@ -20,15 +20,13 @@ msgstr ""
 
 #. Default: "Add >"
 #: ./skins/AddRemoveWidget/widget_addremove.pt:107
-#, fuzzy
 msgid "button_add_item"
-msgstr "Añadir"
+msgstr "Añadir >"
 
 #. Default: "> Add New Value"
 #: ./skins/AddRemoveWidget/widget_addremove.pt:171
-#, fuzzy
 msgid "button_add_new_item"
-msgstr "Añadir nuevo"
+msgstr "> Añadir nuevo"
 
 #. Default: "Down"
 #: ./skins/AddRemoveWidget/widget_addremove.pt:151
@@ -37,9 +35,8 @@ msgstr ""
 
 #. Default: "< Remove"
 #: ./skins/AddRemoveWidget/widget_addremove.pt:112
-#, fuzzy
 msgid "button_remove_item"
-msgstr "Eliminar"
+msgstr "< Eliminar"
 
 #. Default: "Up"
 #: ./skins/AddRemoveWidget/widget_addremove.pt:146
@@ -53,7 +50,6 @@ msgstr "Disponible:"
 
 #. Default: "New Value:"
 #: ./skins/AddRemoveWidget/widget_addremove.pt:164
-#, fuzzy
 msgid "label_new_item_value"
 msgstr "Nuevo valor:"
 
