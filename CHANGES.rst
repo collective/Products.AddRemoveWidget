@@ -6,8 +6,12 @@ Changelog
 
 - Updated french and german translations
   [skaeser]
+
 - Removed fuzzy markers from translation files
   [skaeser]
+
+- Added Taiwanese translation file (zh-tw).
+  [l34marr]
 
 
 1.5.0 (2012-06-27)
