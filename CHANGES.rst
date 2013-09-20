@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.5.1 (unreleased)
+1.5.1 (2013-09-21)
 ------------------
 
 - Updated french and german translations
