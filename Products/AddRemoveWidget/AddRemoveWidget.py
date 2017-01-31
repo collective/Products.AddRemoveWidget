@@ -76,7 +76,7 @@ class AddRemoveWidget(TypesWidget):
         """Returns whether or not a given field has a corresponding
         KeywordIndex in the specified catalog (source).
         """
-        catalog = getToolByName(self, source)
+        catalog = getToolByName(field, source)
         idxs = catalog.index_objects()
         filtered = [idx for idx in idxs if idx.id == field.accessor and
                     idx.meta_type == 'KeywordIndex']

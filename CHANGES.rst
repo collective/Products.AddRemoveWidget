@@ -4,7 +4,8 @@ Changelog
 1.5.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix acquisition issue when used with PloneFormGen >= 1.7.19
+  [gotcha]
 
 
 1.5.1 (2013-09-21)
