@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.5.2 (unreleased)
+1.5.2 (2017-01-31)
 ------------------
 
 - Fix acquisition issue when used with PloneFormGen >= 1.7.19
